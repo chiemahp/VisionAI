@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VisionAI Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3">
+        <circle cx="32" cy="32" r="9"/><circle cx="32" cy="8" r="5"/><circle cx="32" cy="56" r="5"/>
+        <circle cx="10" cy="20" r="5"/><circle cx="54" cy="20" r="5"/><circle cx="10" cy="44" r="5"/><circle cx="54" cy="44" r="5"/>
+        <path d="M32 13v10M32 41v10M14 22l10 6M50 22l-10 6M14 42l10-6M50 42l-10-6"/>
+      </svg>
+      <div>
+        <h1>VisionAI <span>Demo</span></h1>
+        <p>See People. Understand Movement. Build Smarter Applications.</p>
+      </div>
+    </div>
+    <div class="pill">
+      <div><strong>Real-time Computer Vision</strong><small>Face &bull; Hands &bull; Body &bull; AI</small></div>
+    </div>
+    <div class="powered">Powered by <b>MediaPipe</b></div>
+  </header>
+
+  <main class="workspace">
+    <aside class="explorer">
+      <div class="exp-title">EXPLORER</div>
+      <ul class="tree">
+        <li class="root">&#9662; vision-ai-demo</li>
+        <li class="i1">&#128013; app.py</li>
+        <li class="i1 folder">&#9662; templates/</li>
+        <li class="i2">&lt;&gt; index.html</li>
+        <li class="i1 folder blue">&#9662; static/</li>
+        <li class="i2">&#9638; style.css</li>
+        <li class="i2">JS script.js</li>
+        <li class="i1">&#9432; README.md</li>
+        <li class="i1">&#9776; requirements.txt</li>
+        <li class="i1 folder">&#9656; models/</li>
+      </ul>
+      <div class="exp-foot">&#9656; OUTLINE</div>
+      <div class="exp-foot">&#9656; TIMELINE</div>
+    </aside>
+
+    <section class="stage">
+      <div class="toolbar">
+        <button id="camBtn" class="start">&#127909; Start Camera</button>
+        <label><input type="checkbox" id="face" checked><span></span>Face Mesh</label>
+        <label><input type="checkbox" id="hands" checked><span></span>Hands + fingers</label>
+        <label><input type="checkbox" id="pose" checked><span></span>Body Pose</label>
+        <label><input type="checkbox" id="mirror" checked><span></span>Mirror View</label>
+        <div class="fps">FPS: <b id="fpsTop">0</b></div>
+      </div>
+      <div class="video-wrap">
+        <img id="video" alt="Camera feed" src="/video_feed">
+        <div class="hud">
+          <div>Faces detected: <b id="sFaces">0</b></div>
+          <div>Hands detected: <b id="sHands">0</b></div>
+          <div>Pose landmarks: <b id="sPose">0</b></div>
+          <div>FPS: <b id="sFps">0</b></div>
+        </div>
+        <div id="toast" class="toast hidden"></div>
+      </div>
+    </section>
+  </main>
+
+  <section class="cards">
+    <div class="card green"><h3>Face Mesh</h3><p>Detect facial landmarks in real time</p></div>
+    <div class="card blue"><h3>Hand + Finger Tracking</h3><p>Track 21 landmarks and label the thumb, index, middle, ring, and pinky fingers</p></div>
+    <div class="card purple"><h3>Body Pose</h3><p>Detect 33 pose landmarks in real time</p></div>
+    <div class="card teal"><h3>Real-time Performance</h3><p>Fast. Accurate. Reliable. Built for real applications.</p></div>
+  </section>
+
+  <footer class="statusbar">
+    <div><i id="dot" class="dot"></i><span id="status">Ready</span></div>
+    <em>&ldquo;Computer Vision for a Smarter, More Human-Centric World&rdquo;</em>
+    <nav>DEVELOP &nbsp;|&nbsp; EXPERIMENT &nbsp;|&nbsp; INNOVATE</nav>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
