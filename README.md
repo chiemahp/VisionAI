@@ -32,3 +32,4 @@ templates/        index.html
 static/           style.css, script.js
 models/           optional custom model files
 ```
+Project demo vodeo:https://drive.google.com/file/d/1Hit0gg1B0bypSgfA8CjHKp4yaWhJaFyY/view?usp=sharing
